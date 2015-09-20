@@ -1,0 +1,70 @@
+ @font-face {
+    font-family: 'DarbySansPoster';
+    src: url('./DarbySansPoster-Regular.otf');
+  }
+
+  @font-face {
+     font-family: 'DarbySansPosterLight';
+    src: url('./DarbySansPoster-Light.otf');
+  }
+
+  @font-face {
+    font-family: 'MercuryG1';
+    src: url('./Mercury-TextG1Roman.otf');
+  }
+
+.detail-info-wrapper {
+  background-color: white;
+  font-family: 'DarbySansPosterLight';
+  color: black;
+  overflow: scroll;
+  height: 520px;
+  width: 90%;
+  outline: 3px solid white;
+  outline-offset: 5px;
+}
+
+.detail-info-wrapper h1 {
+  padding-top: 5%;
+  margin-bottom: 5%;
+  width: 80%;
+  font-size: 20pt;
+  text-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.detail-info-wrapper img {
+  width: 40%;
+  height: auto;
+}
+
+.detail-info-wrapper .description-info {
+  height: 50%;
+  overflow: scroll;
+  margin: 30px 65px 20px 20px;
+}
+
+.detail-info-wrapper p {
+  font-family: 'MercuryG1';
+  line-height: 170%;
+   text-shadow: none;
+   text-align: left;
+   
+}
+
+.detail-info-wrapper h3 {
+  font-family: 'DarbySansPosterLight';
+  color: #a68451;
+  text-shadow: none;
+}
+
+.detail-info-wrapper span {
+  font-family: 'DarbySansPosterLight';
+  margin-left: 5px;
+  font-size: 25pt;
+  font-weight: light;
+}
+
+
+
+
+

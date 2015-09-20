@@ -10,6 +10,9 @@ hotelApp.config( function($stateProvider, $urlRouterProvider) {
     url: '/main',
     templateUrl: 'templates/main.html',
     controller: 'homeController',
+    resolve: [ 'homeService', function(homeService){
+          return homeService.getInfo();
+         }],
   })
 
   .state('main.home', {
@@ -19,7 +22,8 @@ hotelApp.config( function($stateProvider, $urlRouterProvider) {
 
   .state('main.room', {
     url: '/rooms',
-    templateUrl: 'templates/rooms.html'
+    templateUrl: 'templates/rooms.html',
+    controller: 'roomsController'
   });
 });
 
@@ -35,14 +39,18 @@ hotelApp.config( function($stateProvider, $urlRouterProvider) {
 //   });
 // });
 
-hotelApp.run(function($rootScope){
+hotelApp.run(function($rootScope, $state){
   
   $rootScope.$on("$stateChangeError", console.log.bind(console));
+
+  $rootScope.$state = $state;
+
+  console.log($state);
   
-  $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-      console.log("state changed!");
-        $rootScope.title = current.$$route.title;
-        console.log(current.$$route.title);
-    });
+  // $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+  //     console.log("state changed!");
+  //       $rootScope.title = current.$$route.title;
+  //       console.log(current.$$route.title);
+  //   });
 });
 

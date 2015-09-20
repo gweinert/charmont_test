@@ -1,6 +1,6 @@
 hotelApp.controller("homeController", [
-  "$scope", 'homeService',
-  function($scope, homeService){
+  "$scope", 'homeService', '$state',
+  function($scope, homeService, $state){
     $scope.mainInfo = null;
     $scope.bgImgArr1 = null;
     $scope.pageTitle = null;
@@ -23,7 +23,7 @@ hotelApp.controller("homeController", [
     
     function setHomePageInfo(data){
       $scope.mainInfo = data;
-      $scope.bgImgArr1 = 'http://localhost:3000'+data.SLIDES[0].IMAGE;
+      // $scope.bgImgArr1 = 'http://localhost:3000'+data.SLIDES[0].IMAGE;
       // $scope.pageTitle = data.
     }
 
@@ -33,9 +33,7 @@ hotelApp.controller("homeController", [
 
     
 
-    $scope.changeBgImg = function(page){
-      console.log(page);
-    };
+    $scope.bgImg = homeService.backgroundImgs;
 
 
 

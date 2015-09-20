@@ -23,10 +23,11 @@
 
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
+    <link href="css/detail.css" rel="stylesheet">
 
   <style type="text/css"></style></head>
 
-  <body cz-shortcut-listen="true"  ng-init="init()">
+  <body cz-shortcut-listen="true"  state = "{{$state.current.name}}">
 
     <!-- outer border -->
     <div class="outer-border"></div>
@@ -41,7 +42,12 @@
     <img src="content/charmont-logo.png" class="main-logo" alt="Charmont">
     
     <!-- main layout -->
-    <div class="site-wrapper" ng-if="bgImgArr1" ng-style="{'background-image':'url({{bgImgArr1}})'}">
+    <!-- <div class="site-wrapper" ng-if="bgImgArr1" ng-style="{'background-image':'url({{bgImgArr1}})'}"> -->
+    <div class="site-wrapper" ng-if="bgImg" ng-style="{'background-image':'url('+bgImg[$state.current.name]+')'}">
+    <!-- <div class="site-wrapper" > -->
+
+      <!-- {{bgImg[ $state.current.name ]}}<br> -->
+      <!-- {{$state.current.name}} -->
     <!-- <div class="site-wrapper" > -->
       <div class="site-wrapper-inner">
 
@@ -150,13 +156,14 @@
 
   <!-- controllers -->
   <script src="controllers/mainController.js"></script>
+  <script src="controllers/roomsController.js"></script>
 
   <!-- directives -->
   <script src="directives/updateTitle.js"></script>
   <script src="directives/backgroundImageDirective.js"></script>
 
   <!-- services -->
-  <script src= "homeService.js"></script>
+  <script src= "services/homeService.js"></script>
   
 
 </body></html>
