@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="hotelApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Cover Template for Bootstrap</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+
+  <style type="text/css"></style></head>
+
+  <body cz-shortcut-listen="true" ng-controller="homeController">
+
+    <!-- outer border -->
+    <div class="outer-border"></div>
+    <div class="outer-border"></div>
+    <div class="outer-border"></div>
+    <div class="outer-border"></div>
+    <div class="outer-border"></div>
+    <img src="content/top-left-border.png" class="top-left-border border-corner" alt="">
+    <img src="content/top-right-border.png" class="border-corner top-right-border" alt="">
+    <img src="content/bottom-left-border.png" class="border-corner bottom-left-border" alt="">
+    <img src="content/bottom-right-border.png" class="border-corner bottom-right-border" alt="">
+    <img src="content/charmont-logo.png" class="main-logo" alt="Charmont">
+    
+    <!-- main layout -->
+    <div class="site-wrapper" ng-if="bgImgArr1" ng-style="{'background-image':'url({{bgImgArr1}})'}">
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <nav class="navbar">
+                <div class="container-fluid">
+                    
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="collapse navbar-collapse" ng-class="{collapse: isCollapsed}" id="bs-example-navbar-collapse-1">
+                    <ul class="nav masthead-nav">
+                      <li ng-if="navLinks" ng-repeat="link in navLinks">
+                        <a href="{{link.PATH}}">{{link.LINKTITLE}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            
+            </div>
+          </div>
+
+          <div class="border-wrapper">
+            <div class="outer-border"></div>
+            <div class="outer-border"></div>
+            <div class="outer-border"></div>
+            <div class="outer-border"></div>
+            <div class="outer-border"></div>
+            <img src="content/top-left-border.png" class="top-left-border border-corner" alt="">
+            <img src="content/top-right-border.png" class="border-corner top-right-border" alt="">
+            <img src="content/bottom-left-border.png" class="border-corner bottom-left-border" alt="">
+            <img src="content/bottom-right-border.png" class="border-corner bottom-right-border" alt="">
+            <img src="content/charmont-logo.png" class="main-logo" alt="Charmont">
+          </div>
+
+          
+
+          <div class="inner cover">
+            <div class="text-line-break"></div>
+            <h1 class="cover-heading">{{mainInfo.SLIDES[0].H1}}</h1>
+            <div class="text-line-break"></div>
+          </div>
+
+    
+
+          <div class="footer">
+            
+            <div class="inner">
+              <ul class="footer-info">
+                <li>101 STATE STREET</li>
+                <li>|</li>
+                <li>LA CROSSE, WI 54601</li>
+                <li>|</li>
+                <li>866-697-7300</li>
+                <li>|</li>
+                <li>SIGN UP FOR EMAILS</li>
+              </ul>
+            </div>
+
+            <div class="social-links pull-right">
+              <ul>
+                <li>
+                  <a href="{{mainInfo.SOCIAL_ICON1}}">
+                    <img src="content/facebook-logo.png" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="{{mainInfo.SOCIAL_ICON2}}">
+                    <img src="content/twitter-logo.png" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="{{mainInfo.SOCIAL_ICON3}}">
+                    <img src="content/instagram-logo.png" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <!-- app -->
+  <script src="app.js"></script>
+
+  <!-- controllers -->
+  <script src="controllers/mainController.js"></script>
+
+  <!-- directives -->
+  <script src="directives/updateTitle.js"></script>
+  <script src="directives/backgroundImageDirective.js"></script>
+
+  <!-- services -->
+  <script src= "homeService.js"></script>
+  
+
+</body></html>
