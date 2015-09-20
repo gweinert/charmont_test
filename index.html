@@ -9,15 +9,15 @@
     <meta name="description" content="{{pageInfo[$state.current.name].META_DESCRIPTION}}">
     <meta name="keywords" content="{{pageInfo[$state.current.name].META_KEYWORDS}}">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Cover Template for Bootstrap</title>
+    <title></title>
+    
+    <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-
+    
+    <!-- UI Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -25,7 +25,7 @@
     <link href="css/cover.css" rel="stylesheet">
     <link href="css/detail.css" rel="stylesheet">
 
-  <style type="text/css"></style></head>
+  </head>
 
   <body cz-shortcut-listen="true"  state = "{{$state.current.name}}">
 
@@ -40,15 +40,10 @@
     <img src="content/bottom-left-border.png" class="border-corner bottom-left-border" alt="">
     <img src="content/bottom-right-border.png" class="border-corner bottom-right-border" alt="">
     <img src="content/charmont-logo.png" class="main-logo" alt="Charmont">
-    
-    <!-- main layout -->
-    <!-- <div class="site-wrapper" ng-if="bgImgArr1" ng-style="{'background-image':'url({{bgImgArr1}})'}"> -->
-    <div class="site-wrapper" ng-if="bgImg" ng-style="{'background-image':'url('+pageInfo[$state.current.name].SLIDES[0].IMAGE+')'}">
-    <!-- <div class="site-wrapper" > -->
 
-      <!-- {{bgImg[ $state.current.name ]}}<br> -->
-      <!-- {{pageInfo}} -->
-    <!-- <div class="site-wrapper" > -->
+    <!-- COVER PHOTO -->
+    <!-- photo changes on state from ui-router -->
+    <div class="site-wrapper" ng-if="bgImg" ng-style="{'background-image':'url('+pageInfo[$state.current.name].SLIDES[0].IMAGE+')'}">
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
@@ -71,7 +66,7 @@
                     <ul class="nav masthead-nav">
                       <li ng-if="navLinks" ng-repeat="link in navLinks">
                         <a href="#/main{{link.PATH}}" ng-click="changeBgImg(link.LINKTITLE)">{{link.LINKTITLE}}</a>
-                        <!-- <a ui-sref = "rooms">{{link.LINKTITLE}}</a> -->
+
                       </li>
                     </ul>
                   </div>
@@ -81,31 +76,12 @@
             </div>
           </div>
 
-         <!--  <div class="border-wrapper">
-            <div class="outer-border"></div>
-            <div class="outer-border"></div>
-            <div class="outer-border"></div>
-            <div class="outer-border"></div>
-            <div class="outer-border"></div>
-            <img src="content/top-left-border.png" class="top-left-border border-corner" alt="">
-            <img src="content/top-right-border.png" class="border-corner top-right-border" alt="">
-            <img src="content/bottom-left-border.png" class="border-corner bottom-left-border" alt="">
-            <img src="content/bottom-right-border.png" class="border-corner bottom-right-border" alt="">
-            <img src="content/charmont-logo.png" class="main-logo" alt="Charmont">
-          </div> -->
 
           <div class="inner cover">
             <ui-view><ui-view>
           </div>
-          
-          <!-- <div class="inner cover">
-            <div class="text-line-break"></div>
-            <h1 class="cover-heading">{{mainInfo.SLIDES[0].H1}}</h1>
-            <div class="text-line-break"></div>
-          </div> -->
 
     
-
           <div class="footer">
             
             <div class="inner">
@@ -142,10 +118,9 @@
           
           </div>
 
+
         </div>
-
       </div>
-
     </div>
 
     <!-- Bootstrap core JavaScript

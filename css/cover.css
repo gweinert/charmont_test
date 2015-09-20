@@ -64,10 +64,6 @@ body {
 
 }
 
-/*[state^="main.room"] .site-wrapper {
-  background-color: green;
-  
-}*/
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
@@ -185,6 +181,7 @@ body {
   width: 17%;
   left: 41.5%;
   top: 1.5%;
+  z-index:100000000;
 
 }
 

@@ -13,6 +13,8 @@
     src: url('./Mercury-TextG1Roman.otf');
   }
 
+
+/*room description*/
 .detail-info-wrapper {
   background-color: white;
   font-family: 'DarbySansPosterLight';
@@ -68,8 +70,19 @@
   font-size: 25pt;
   font-weight: light;
 }
+/*//////*/
 
 
+
+/*MOBILE*/
+@media (max-width: 767px) {
+  
+  .detail-info-wrapper{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+}
 
 
 
