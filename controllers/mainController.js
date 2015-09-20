@@ -2,8 +2,8 @@ hotelApp.controller("homeController", [
   "$scope", 'homeService', '$state',
   function($scope, homeService, $state){
     $scope.mainInfo = null;
-    $scope.bgImgArr1 = null;
-    $scope.pageTitle = null;
+    // $scope.bgImgArr1 = null;
+    // $scope.pageTitle = null;
     
     homeService.getInfo()
     .success(function(data){
@@ -27,7 +27,6 @@ hotelApp.controller("homeController", [
 
     function setNavBar(data){
       $scope.navLinks = data.NAVIGATION;
-      console.log(homeService.pageInfo)
     }
 
     

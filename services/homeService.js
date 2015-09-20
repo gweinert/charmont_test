@@ -26,7 +26,6 @@ hotelApp.factory("homeService",
     };
 
     obj.getInfo().then( function( response){
-      console.log("getting shit");
         buildHomePageInfo(response);
         console.log("success-info");
       }), (function(){
@@ -37,11 +36,6 @@ hotelApp.factory("homeService",
 
     var buildHomePageInfo = function(data){
       obj.pageInfo["main.home"] = data.data;
-      // obj.backgroundImgs["main.home"] = data.data.SLIDES[0].IMAGE;
-      // obj.pageInfo.bg["main.home"] = data.data.SLIDES[0].IMAGE;
-      // obj.pageInfo.title["main.home"] = data.data.PAGETITLE;
-      // obj.pageInfo.descr["main.home"] = data.data.META_DESCRIPTION;
-      // obj.pageInfo.keywords["main.home"] = data.data.META_KEYWORDS;
       console.log(obj.backgroundImgs);
     };
 

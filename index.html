@@ -43,7 +43,8 @@
 
     <!-- COVER PHOTO -->
     <!-- photo changes on state from ui-router -->
-    <div class="site-wrapper" ng-if="bgImg" ng-style="{'background-image':'url('+pageInfo[$state.current.name].SLIDES[0].IMAGE+')'}">
+    <!-- <div class="site-wrapper" ng-if="bgImg" ng-style="{'background-image':'url('+pageInfo[$state.current.name].SLIDES[0].IMAGE+')'}"> -->
+    <div class="site-wrapper" ng-if="bgImg" style="background-image:url({{pageInfo[$state.current.name].SLIDES[0].IMAGE}})">
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
