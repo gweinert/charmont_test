@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="hotelApp">
+<html lang="en" ng-app="hotelApp" ng-controller="homeController">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-ng-bind="mainInfo.PAGETITLE"></title>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
+    <meta name="description" content="{{mainInfo.META_DESCRIPTION}}">
+    <meta name="keywords" content="{{mainInfo.META_KEYWORDS}}">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
@@ -24,7 +26,7 @@
 
   <style type="text/css"></style></head>
 
-  <body cz-shortcut-listen="true" ng-controller="homeController">
+  <body cz-shortcut-listen="true"  ng-init="init()">
 
     <!-- outer border -->
     <div class="outer-border"></div>
@@ -40,6 +42,7 @@
     
     <!-- main layout -->
     <div class="site-wrapper" ng-if="bgImgArr1" ng-style="{'background-image':'url({{bgImgArr1}})'}">
+    <!-- <div class="site-wrapper" > -->
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
@@ -61,7 +64,8 @@
                   <div class="collapse navbar-collapse" ng-class="{collapse: isCollapsed}" id="bs-example-navbar-collapse-1">
                     <ul class="nav masthead-nav">
                       <li ng-if="navLinks" ng-repeat="link in navLinks">
-                        <a href="{{link.PATH}}">{{link.LINKTITLE}}</a>
+                        <a href="#/main{{link.PATH}}" ng-click="changeBgImg(link.LINKTITLE)">{{link.LINKTITLE}}</a>
+                        <!-- <a ui-sref = "rooms">{{link.LINKTITLE}}</a> -->
                       </li>
                     </ul>
                   </div>
@@ -71,7 +75,7 @@
             </div>
           </div>
 
-          <div class="border-wrapper">
+         <!--  <div class="border-wrapper">
             <div class="outer-border"></div>
             <div class="outer-border"></div>
             <div class="outer-border"></div>
@@ -82,15 +86,17 @@
             <img src="content/bottom-left-border.png" class="border-corner bottom-left-border" alt="">
             <img src="content/bottom-right-border.png" class="border-corner bottom-right-border" alt="">
             <img src="content/charmont-logo.png" class="main-logo" alt="Charmont">
-          </div>
-
-          
+          </div> -->
 
           <div class="inner cover">
+            <ui-view><ui-view>
+          </div>
+          
+          <!-- <div class="inner cover">
             <div class="text-line-break"></div>
             <h1 class="cover-heading">{{mainInfo.SLIDES[0].H1}}</h1>
             <div class="text-line-break"></div>
-          </div>
+          </div> -->
 
     
 

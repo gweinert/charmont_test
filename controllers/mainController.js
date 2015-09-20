@@ -7,8 +7,6 @@ hotelApp.controller("homeController", [
     homeService.getInfo()
     .success(function(data){
       setHomePageInfo(data);
-      
-      console.log($scope.mainInfo);
     })
     .error(function(){
       console.log("failure");
@@ -29,9 +27,13 @@ hotelApp.controller("homeController", [
 
     function setNavBar(data){
       $scope.navLinks = data.NAVIGATION;
-      console.log("navs");
-      console.log(data)
     }
+
+    
+
+    $scope.changeBgImg = function(page){
+      console.log(page);
+    };
 
 
 

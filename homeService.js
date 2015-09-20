@@ -13,6 +13,10 @@ hotelApp.factory("homeService",
     return $http.get('navigation.json');
   };
 
+  obj.getDetail = function(){
+    return $http.get('detail.json');
+  }
+
   return obj;
   
 }]);
