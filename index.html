@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title data-ng-bind="mainInfo.PAGETITLE"></title>
+    <title data-ng-bind="pageInfo[$state.current.name].PAGETITLE"></title>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="{{mainInfo.META_DESCRIPTION}}">
-    <meta name="keywords" content="{{mainInfo.META_KEYWORDS}}">
+    <meta name="description" content="{{pageInfo[$state.current.name].META_DESCRIPTION}}">
+    <meta name="keywords" content="{{pageInfo[$state.current.name].META_KEYWORDS}}">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
@@ -43,11 +43,11 @@
     
     <!-- main layout -->
     <!-- <div class="site-wrapper" ng-if="bgImgArr1" ng-style="{'background-image':'url({{bgImgArr1}})'}"> -->
-    <div class="site-wrapper" ng-if="bgImg" ng-style="{'background-image':'url('+bgImg[$state.current.name]+')'}">
+    <div class="site-wrapper" ng-if="bgImg" ng-style="{'background-image':'url('+pageInfo[$state.current.name].SLIDES[0].IMAGE+')'}">
     <!-- <div class="site-wrapper" > -->
 
       <!-- {{bgImg[ $state.current.name ]}}<br> -->
-      <!-- {{$state.current.name}} -->
+      <!-- {{pageInfo}} -->
     <!-- <div class="site-wrapper" > -->
       <div class="site-wrapper-inner">
 

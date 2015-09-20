@@ -23,17 +23,19 @@ hotelApp.controller("homeController", [
     
     function setHomePageInfo(data){
       $scope.mainInfo = data;
-      // $scope.bgImgArr1 = 'http://localhost:3000'+data.SLIDES[0].IMAGE;
-      // $scope.pageTitle = data.
     }
 
     function setNavBar(data){
       $scope.navLinks = data.NAVIGATION;
+      console.log(homeService.pageInfo)
     }
 
     
-
+    $scope.pageInfo = homeService.pageInfo;
     $scope.bgImg = homeService.backgroundImgs;
+    $scope.pageTitle = homeService.pageTitles;
+    $scope.pageDescription = homeService.pageDescriptions;
+    $scope.pageKeywords = homeService.pageKeywords;
 
 
 

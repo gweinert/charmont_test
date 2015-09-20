@@ -7,8 +7,9 @@ hotelApp.factory("homeService",
     obj.pageInfo = {};
     obj.backgroundImgs = {};
 
+
     obj.getInfo = function(){
-      return $http.get('home.json')
+      return $http.get('home.json');
     };
 
     obj.getNav = function(){
@@ -35,14 +36,18 @@ hotelApp.factory("homeService",
     obj.getDetail();
 
     var buildHomePageInfo = function(data){
-      obj.mainInfo = data;
-      obj.backgroundImgs["main.home"] = data.data.SLIDES[0].IMAGE;
+      obj.pageInfo["main.home"] = data.data;
+      // obj.backgroundImgs["main.home"] = data.data.SLIDES[0].IMAGE;
+      // obj.pageInfo.bg["main.home"] = data.data.SLIDES[0].IMAGE;
+      // obj.pageInfo.title["main.home"] = data.data.PAGETITLE;
+      // obj.pageInfo.descr["main.home"] = data.data.META_DESCRIPTION;
+      // obj.pageInfo.keywords["main.home"] = data.data.META_KEYWORDS;
       console.log(obj.backgroundImgs);
     };
 
     var buildDetailPageInfo = function(data){
-      console.log("adding bg room img");
-      obj.backgroundImgs["main.room"] = data.data.SLIDES[0].IMAGE;
+      obj.pageInfo["main.room"] = data.data;
+      // obj.backgroundImgs["main.room"] = data.data.SLIDES[0].IMAGE;
       obj.detailInfo = data.data;
     };
 

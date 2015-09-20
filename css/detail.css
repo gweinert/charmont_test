@@ -53,8 +53,13 @@
 
 .detail-info-wrapper h3 {
   font-family: 'DarbySansPosterLight';
-  color: #a68451;
+
   text-shadow: none;
+}
+
+.detail-info-wrapper h3 a {
+  text-decoration: none;
+  color: #a68451;
 }
 
 .detail-info-wrapper span {
