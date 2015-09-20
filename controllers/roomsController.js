@@ -3,6 +3,8 @@ hotelApp.controller("roomsController", [
   function($scope, homeService){
     $scope.detailInfo = null;
 
+    $scope.
+
     homeService.getDetail()
     .success(function(data){
       setDetailPage(data);

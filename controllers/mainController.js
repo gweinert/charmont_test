@@ -3,6 +3,7 @@ hotelApp.controller("homeController", [
   function($scope, homeService){
     $scope.mainInfo = null;
     $scope.bgImgArr1 = null;
+    $scope.pageTitle = null;
     
     homeService.getInfo()
     .success(function(data){
@@ -23,6 +24,7 @@ hotelApp.controller("homeController", [
     function setHomePageInfo(data){
       $scope.mainInfo = data;
       $scope.bgImgArr1 = 'http://localhost:3000'+data.SLIDES[0].IMAGE;
+      // $scope.pageTitle = data.
     }
 
     function setNavBar(data){

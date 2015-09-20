@@ -3,20 +3,32 @@ hotelApp.factory("homeService",
   
   function($http){
     var obj = {};
-    obj.mainInfo = null;
+    obj.mainInfo = {};
+    obj.pageInfo = {};
+    obj.backgroundImg = {};
 
-  obj.getInfo = function(){
-    return $http.get('home.json');
-  };
+    obj.getInfo = function(){
+      return $http.get('home.json');
+    };
 
-  obj.getNav = function(){
-    return $http.get('navigation.json');
-  };
+    obj.getNav = function(){
+      return $http.get('navigation.json');
+    };
 
-  obj.getDetail = function(){
-    return $http.get('detail.json');
-  }
+    obj.getDetail = function(){
+      return $http.get('detail.json').then( function( response){
+        buildDetailPageInfo(response);
+        console.log("success-detail");
+      }), (function(){
+        console.log("error");
+      });
+    };
 
-  return obj;
+    var buildDetailPageInfo = function(data){
+      console.log(data);
+      obj.backgroundImg = data.SLIDES[0].IMAGE;
+    };
+
+    return obj;
   
 }]);
