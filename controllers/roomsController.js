@@ -4,5 +4,12 @@ hotelApp.controller("roomsController", [
 
     $scope.detailInfo = homeService.detailInfo;
 
+    $scope.jqueryScrollbarOptions = {
+        "onScroll":function(y, x){
+            if(y.scroll == y.maxScroll){
+                alert('Scrolled to bottom');
+            }
+        }
+    };
     
   }]);

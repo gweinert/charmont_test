@@ -1,17 +1,6 @@
 hotelApp.controller("homeController", [
   "$scope", 'homeService', '$state',
   function($scope, homeService, $state){
-    $scope.mainInfo = null;
-    // $scope.bgImgArr1 = null;
-    // $scope.pageTitle = null;
-    
-    homeService.getInfo()
-    .success(function(data){
-      setHomePageInfo(data);
-    })
-    .error(function(){
-      console.log("failure");
-    });
 
     homeService.getNav()
     .success(function(data){
@@ -21,9 +10,6 @@ hotelApp.controller("homeController", [
       console.log("failure");
     });
     
-    function setHomePageInfo(data){
-      $scope.mainInfo = data;
-    }
 
     function setNavBar(data){
       $scope.navLinks = data.NAVIGATION;
@@ -31,6 +17,7 @@ hotelApp.controller("homeController", [
 
     
     $scope.pageInfo = homeService.pageInfo;
+    $scope.mainInfo = $scope.pageInfo["main.home"];
     $scope.bgImg = homeService.backgroundImgs;
     $scope.pageTitle = homeService.pageTitles;
     $scope.pageDescription = homeService.pageDescriptions;

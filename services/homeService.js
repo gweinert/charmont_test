@@ -9,15 +9,15 @@ hotelApp.factory("homeService",
 
 
     obj.getInfo = function(){
-      return $http.get('home.json');
+      return $http.get('json/home.json');
     };
 
     obj.getNav = function(){
-      return $http.get('navigation.json');
+      return $http.get('json/navigation.json');
     };
 
     obj.getDetail = function(){
-      return $http.get('detail.json').then( function( response){
+      return $http.get('json/detail.json').then( function( response){
         buildDetailPageInfo(response);
         console.log("success-detail");
       }), (function(){
@@ -36,12 +36,10 @@ hotelApp.factory("homeService",
 
     var buildHomePageInfo = function(data){
       obj.pageInfo["main.home"] = data.data;
-      console.log(obj.backgroundImgs);
     };
 
     var buildDetailPageInfo = function(data){
       obj.pageInfo["main.room"] = data.data;
-      // obj.backgroundImgs["main.room"] = data.data.SLIDES[0].IMAGE;
       obj.detailInfo = data.data;
     };
 
